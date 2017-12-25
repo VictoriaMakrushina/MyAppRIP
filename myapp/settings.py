@@ -83,7 +83,7 @@ DATABASES = {
         'NAME': 'Repetitors',
         'USER': 'root',
         'PASSWORD': 'kukusik1968',
-        'HOST': 'localhost',
+        'HOST': '127.0.0.1',
         'PORT': 3306,
         'OPTIONS': {'charset': 'utf8'},
         'TEST_CHARSET': 'utf8',
