@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Raleway');
+@import url('http://geek-nose.com/wp-content/uploads/2017/05/1-28.jpg') ;
+
+top{
+    background-color: #ffffff;
+    font-family: "Lato";
+    font-weight: 300;
+    font-size: 16px;
+    color: #555555;
+
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+
+    margin-top: 70px;
+}
+body {
+    background-color: #ffffff;
+    font-family: "Lato";
+    font-weight: 300;
+    font-size: 16px;
+    color: #555555;
+
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+
+    margin-top: 70px;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: "Raleway";
+    font-weight: 300;
+    color: #333333;
+}
+p{
+    line-height: 28px;
+    margin-bottom: 25px;
+}
+
+.centered{
+    text-align: center;
+}
+
+a{
+    color: #d9534f;
+}
+
+a:hover, a:focus {
+    color: #7b7b7b;
+    text-decoration: non;
+    outline: 0;
+}
+
+hr{
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #cccccc;
+    margin: 1em 0;
+    padding: 0;
+
+}
+.navbar {
+    font-weight: 800;
+    font-size: 14px;
+    padding-size: 15px;
+    padding-bottom: 15px;
+}
+
+.navbar-inverse{
+    background: #2d2d2d;
+    border-color: #2d2d2d;
+    border-style: dotted;
+}
+
+.navbar-inverse .navbar-nav > .active > a {
+    background-color: #ff7878;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #999999;
+    font-weight: bolder;
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+#headerwrap {
+    background-image: url('http://geek-nose.com/wp-content/uploads/2017/05/1-28.jpg') ;
+    margin-top: -10px;
+    padding-top: 20px;
+    text-align: center;
+    background-attachment: relative;
+    background-position: center center;
+    min-height: 500px;
+    width: 100%;
+
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -maz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#headerwrap h1{
+    margin-top: 100px;
+    color: #c9302c;
+    font-size: 70px;
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+#headerwrap h2{
+    color: #c9302c;
+    letter-spacing: 2px;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+#headerwrap1 {
+    margin-top: -10px;
+    padding-top: 20px;
+    text-align: center;
+    background-attachment: relative;
+    background-position: center center;
+    background-color: #dca7a7;
+    min-height: 100px;
+    width: 100%;
+
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -maz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#headerwrap1 h1{
+    margin-top: 100px;
+    color: #c9302c;
+    font-size: 70px;
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+#headerwrap1 h2{
+    color: #c9302c;
+    letter-spacing: 2px;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+#Part p{
+    color: #2aabd2;
+}
+.w {
+    padding-top: 35px;
+}
+
+.w h4 {
+    font-size: 30px;
+}
+
+#dg {
+    background: #e0e0e0;
+    padding-left: 70px;
+    padding-bottom: 70px;
+    text-align: center;
+    font-size: 30px;
+
+
+}
+#dg h4 {
+    font-size: 70px;
+
+}
+
+.tilt {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    text-align: center;
+}
+
+.tilt:hover {
+    -webkit-transform: translate(-100px, -50px) ;
+    -moz-transform: rotate(-100px, -50px) ;
+    -o-transform: rotate(-100px, -50px) ;
+    -ms-transform: rotate(-100px, -50px) ;
+    transform: translate(-100px, -50px) ;
+}
+
+/*тут можно вставить примочки для приложений тлф*/
+
+.wb {
+    padding-top: 35px;
+    margin-bottom:0 ;
+}
+
+.wb h4{
+   font-size: 35px;
+}
+
+
+.course {
+    border: 2px;
+    border-style: solid;
+    border-color: black;
+    width: 400px;
+    heigth: 150px;
+    margin: 15px;
+}
+
+.img__course {
+heigth: 50px;
+width:50px;
+}
+
+
+.img__Start{
+heigth: 350px;
+width:350px;
+}
+
+.repetitor {
+    font-color: #e0e0e0 ;
+    border: 2px;
+    border-style: solid;
+    border-color: black;
+    width: 400px;
+    heigth: 150px;
+    margin: 15px;
+}
+
+.img__repetitor {
+heigth: 50px;
+width:50px;
+}
+
+.repetitor h1 {
+font-family: Geneva
+color: #32354
+}
+
+#blockscreen, #modalwindow {
+    position: fixed;
+}
+#blockscreen {
+    background: rgba(0, 0, 0, .5);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+}
+#modalwindow {
+    z-index: 11;
+    background: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #a1a1a1;
+    box-shadow: 0 0 10px #444;
+
+}

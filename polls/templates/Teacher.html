@@ -1,0 +1,68 @@
+{% extends 'Base.html' %}
+{% load staticfiles %}
+{#<link href="{% static "main.css" %}" rel="stylesheet" media="screen">#}
+<link href="{% static "main.css" %}" rel="stylesheet" media="screen">
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static "bootstrap.css" %}">
+  <link rel="stylesheet" href="{% static "font-awesome.css" %}">
+  <link rel="stylesheet" href="{% static "bootstrap-theme.css" %}">
+<script src="{% static 'scroll.js' %}"></script>
+{% block title %}Krоiser{% endblock %}
+
+{% block top1 %}
+<div id="headerwrap1">
+    <div class="container">
+      <div class="row centered">
+        <div class="col-lg-8 col-lg-offset-2">
+          <h1>Studing is awesome!</h1>
+          <h2>Teacher!</h2>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+     <ul class="list-group-items">
+
+        {% for repetitor in object_list %}
+         <!--<div class="course">-->
+          <!--<div class="centered" >-->
+
+
+              <h1><a href="{% url 'repet-detail' repetitor.id %}"> {{ repetitor.name }}</a></h1>
+              <div class="col-md-4">
+                  <img src={{ repetitor.avatar.url }} style="max-height:50px;margin-left:5px"/>
+              </div>
+              <div class="col-md-8">-->
+                 <h3>{{ repetitor.description }}</h3>
+              </div>
+
+
+              <!--<h3>{{ repetitor.phone_number }}</h3>-->
+               {% if user.is_authenticated %}
+                  {% if user.id != repetitor.id %}
+
+                    <button type="button" class="btn btn-primary followBTN"  user_id="{{ repetitor.id }}" >Сотрудничать</button>
+                    <button type="button" class="btn btn-danger unfollowBTN" user_id="{{ repetitor.id }}"  >Прекратить сотрудничество</button>
+                  {% endif %}
+                {% endif %}
+
+             <!--</div>-->
+          <!--</div>-->
+
+          {% endfor %}
+    </ul>
+
+
+
+
+
+<script type="text/javascript">
+   var user_id="{{ repetitor.id }}";
+   var cur_user_id = "{{ user.id }}";
+</script>
+
+
+
+ {% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'Base.html' %}
+{% load staticfiles %}
+{% block title %}Krоiser{% endblock %}
+{#<link href="{% static "main.css" %}" rel="stylesheet" media="screen">#}
+<link href="{% static "main.css" %}" rel="stylesheet" media="screen">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static "bootstrap.css" %}">
+  <link rel="stylesheet" href="{% static "font-awesome.css" %}">
+  <link rel="stylesheet" href="{% static "bootstrap-theme.css" %}">
+
+{% block top1 %}
+<div id="headerwrap1">
+    <div class="container">
+      <div class="row centered">
+        <div class="col-lg-8 col-lg-offset-2">
+
+          <h1>Welcome</h1>
+          <h2>Studing is awesome!</h2>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+
+    <h1>Welcome {{ new_user.first_name }}!</h1>
+    <p>Your account has been successfully created. Now you can <a href="{% url "login" %}">log in</a>.</p>
+{% endblock %}

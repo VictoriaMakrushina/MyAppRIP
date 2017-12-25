@@ -1,0 +1,47 @@
+{% extends 'Base.html' %}
+{% load staticfiles %}
+{{ form.non_field_errors }}
+{% block title %}Krоiser{% endblock %}
+{#<link href="{% static "main.css" %}" rel="stylesheet" media="screen">#}
+<link href="{% static "main.css" %}" rel="stylesheet" media="screen">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static "bootstrap.css" %}">
+  <link rel="stylesheet" href="{% static "font-awesome.css" %}">
+  <link rel="stylesheet" href="{% static "bootstrap-theme.css" %}">
+
+{% block top1 %}
+<div>
+<div id="headerwrap1">
+    <div class="container">
+      <div class="row centered">
+        <div class="col-lg-8 col-lg-offset-2">
+          <h1>Studing is awesome!</h1>
+          <h2>Registration!</h2>
+        </div>
+      </div>
+    </div>
+</div>
+
+<form action="{% url 'reg' %}" method="post" class="form-horizontal" enctype="multipart/form-data">
+{% csrf_token %}
+{% for field in form %}
+    <div class="form-group">
+        <div class="col-md-offset-2 col-sm-10">
+            <span class="text-danger small">{{ field.errors }}</span>
+        </div>
+        <div class="inline" >
+            <label class="control-label col-sm-3">{{ field.label_tag }}</label>
+            <div style="margin-left: 200px;" class="col-sm-8">{{ field }}</div>
+        </div>
+    </div>
+{% endfor %}
+    <div class="form-group">
+        <div class="col-sm-offset-4 col-sm-4">
+            <input type="submit" value="Зарегистрировать" class="btn btn-default"/>
+        </div>
+    </div>
+</form>
+</div>
+
+
+ {% endblock %}

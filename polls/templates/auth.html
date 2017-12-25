@@ -1,0 +1,77 @@
+{% extends 'Base.html' %}
+{% load staticfiles %}
+{% block title %}Krоiser{% endblock %}
+{#<link href="{% static "main.css" %}" rel="stylesheet" media="screen">#}
+
+ <link href="{% static "main.css" %}" rel="stylesheet" media="screen">
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static "bootstrap.css" %}">
+  <link rel="stylesheet" href="{% static "font-awesome.css" %}">
+  <link rel="stylesheet" href="{% static "bootstrap-theme.css" %}">
+
+
+{% block top1%}
+<div>
+<div id="headerwrap1">
+    <div class="container">
+      <div class="row centered">
+        <div class="col-lg-8 col-lg-offset-2">
+          <h1>Studing is awesome!</h1>
+          <h2>Ваша страница</h2>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<img src={{ user.avatar.url }} style="max-height:250px;margin-left:50px"/>
+<h1 style="color: black;">Репетитор &ndash; {{ user.name }}   <br> <small>Вы зарегистрированны </small></h1>
+<!--<p style="color: red;">{{ selected_user.get_full_name }}</p>-->
+
+<h2 style="color: '54434';">Курсы:</h2>
+<!--<ul class="list-group">-->
+    <!--{% for cours in selected_user.cooperate.all %}-->
+        <!--<li class="list-group-item">-->
+            <!--<a href="{% url 'user_url' fed_user.id %}">-->
+                <!--<b><img src={{ fed_user.avatar.url }} style="max-height:50px;margin-right:5px"/>{{ fed_user }}</b>-->
+            <!--</a>-->
+        <!--</li>-->
+    <!--{% empty %}-->
+        <!--<li class="list-group-item disabled">Пользователь ни c кем не сотрудничает</li>-->
+    <!--{% endfor %}-->
+<!--</ul>-->
+
+
+<ul>
+    {% for course in wall_courses %}
+       {% if course.repetitor == user%}
+    <div class="course">
+        <li class="list-group-item">
+            <img src={{ course.avatar.url }} style="max-height:50px;margin-right:5px"/></li>
+            <b><h1><a href="{% url 'course_detail' course.id %}">{{ course.name }}</a></h1></b>
+            <h3>{{ course.description }}</h3>
+
+    </div>
+        {% endif %}
+    {% empty %}
+        <li class="list-group-item disabled">Пока нет курсов</li>
+    {% endfor %}
+</ul>
+    <h2 style="color: gold;">С вами хотят сотрудничать:</h2>
+<ul class="list-group">
+
+    {% for copuser in user.cooperated.all %}
+
+        <li class="list-group-item">
+            <a href="{% url 'repet-detail' copuser.id %}">
+                <b><img src={{ copuser.avatar.url }} style="max-height:50px;margin-right:5px"/>{{ copuser }}</b>
+            </a>
+        </li>
+    {% empty %}
+        <li class="list-group-item disabled">На пользователя никто не подписан</li>
+    {% endfor %}
+</ul>
+
+    <li><a href="{% url 'newcourse' %}">Добавить курс</a></li>
+{% endblock %}
